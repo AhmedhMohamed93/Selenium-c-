@@ -36,7 +36,7 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
 
         By Infusion = By.XPath("//a[contains(text(),'Infusion')]");
-        By alignmentProject = By.XPath("//span[contains(text(),'Interoperability Projects')]");
+        By alignmentProject = By.XPath("//span[contains(text(),'Alignment Projects')]");
         By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
         By AlignmentProjectName = By.XPath("//input[@id='Name']");
         By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
@@ -48,7 +48,7 @@ namespace Selenium_with_CSharp
         By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
         By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
         By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
-
+        By UploadSucessfully = By.XPath("//div[@class='toast-text ng-star-inserted']");
 
 
 
@@ -104,7 +104,7 @@ namespace Selenium_with_CSharp
 
         public void CreateNewPharmacyAlignmentProject(String AlignmentprojectName, String EMRformualry)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(20));
             wait.Until(ExpectedConditions.ElementToBeClickable(NewalignmentProjectBtn));
             driver.FindElement(NewalignmentProjectBtn).Click();
             Thread.Sleep(3000);
@@ -113,16 +113,17 @@ namespace Selenium_with_CSharp
             driver.FindElement(EMRFormualry).Click();
             Thread.Sleep(2000);
             driver.FindElement(EMRFormualry).SendKeys(EMRformualry);
-            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(20));
             wait1.Until(ExpectedConditions.ElementToBeClickable(Facility));
             driver.FindElement(Facility).Click();
             Thread.Sleep(2000);
             driver.FindElement(UploadGRE).Click();
-            Thread.Sleep(4000);
+            Thread.Sleep(2000);
             /* Ulpoad GRE File */
             SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\Infusion_Demo.gre");
             SendKeys.SendWait("{Enter}");
-            Thread.Sleep(10000);
+            WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait2.Until(ExpectedConditions.ElementExists(UploadSucessfully));
             driver.FindElement(EMRItems).Click();
             Thread.Sleep(2000);
             driver.FindElement(EMRItemsSelect).Click();
@@ -131,11 +132,16 @@ namespace Selenium_with_CSharp
             /* Upload EMR Items */
             SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\SC IV SET-Original.xls");
             SendKeys.SendWait("{Enter}");
-            Thread.Sleep(10000);
+            //WebDriverWait wait3 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            //wait3.Until(ExpectedConditions.ElementExists(UploadSucessfully));
+            Thread.Sleep(3000);
             driver.FindElement(SaveAlignmentProject).Click();
-            Thread.Sleep(5000);
+            WebDriverWait wait4 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait4.Until(ExpectedConditions.ElementToBeClickable(AlignmentSearch));
             driver.FindElement(AlignmentSearch).SendKeys(AlignmentprojectName);
-            Assert.AreEqual(driver.FindElement(AlignmentProjectValidation).Text, AlignmentprojectName);
+            WebDriverWait wait5 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait5.Until(ExpectedConditions.ElementIsVisible(AlignmentProjectValidation));
+            Assert.AreEqual(AlignmentprojectName, driver.FindElement(AlignmentProjectValidation).Text);
         }
     }
 }

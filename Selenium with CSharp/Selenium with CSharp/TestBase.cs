@@ -117,6 +117,10 @@ namespace Selenium_with_CSharp
             htmlReporter = new ExtentHtmlReporter(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\report.html");
             htmlReporter.Config.Theme = Theme.Dark;
             htmlReporter.Config.DocumentTitle = "Test Report";
+
+            //extent.AddSystemInfo("Environment", "Test A Server");
+           // extent.AddSystemInfo("User Name", "Ahmed Hamdy");
+            
             htmlReporter.Config.ReportName = "Generate Alignment Project Test Report";
             getInstance();
             extent.AttachReporter(htmlReporter);

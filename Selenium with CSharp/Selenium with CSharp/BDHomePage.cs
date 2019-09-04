@@ -19,7 +19,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String URL = "https://sd-test-a-2012.kp.cfnp.local/DataManager/#/Home";
+        String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
 
 
 
@@ -89,7 +89,8 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void Login(String Uname, String Password)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10); driver.FindElement(SigninBtn).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.FindElement(SigninBtn).Click();
             driver.FindElement(UserName).SendKeys(Uname);
             driver.FindElement(UserPass).SendKeys(Password);
             driver.FindElement(LoginBtn).Click();
@@ -128,8 +129,8 @@ namespace Selenium_with_CSharp
 
         public void ValidateLaunchingPageSucessfully()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementExists(LaunchingValidation));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(LaunchingValidation));
             Assert.True(driver.FindElement(LaunchingValidation).Displayed);
         }
 
@@ -145,8 +146,8 @@ namespace Selenium_with_CSharp
 
         public void ValidateLoginPageNavigation()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementExists(loginNavigation));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(loginNavigation));
             Assert.True(driver.FindElement(loginNavigation).Displayed);
         }
     }

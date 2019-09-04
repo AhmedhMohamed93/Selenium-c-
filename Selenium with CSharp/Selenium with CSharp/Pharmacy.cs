@@ -95,7 +95,7 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void CreateNewPharmacyFormualry(String PFName, String PFID, String PFVendor, String FacilityName)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(NewPF));
             driver.FindElement(NewPF).Click();
             Thread.Sleep(1000);
@@ -116,7 +116,7 @@ namespace Selenium_with_CSharp
             Thread.Sleep(1000);
             driver.FindElement(PharmacySearch).SendKeys(PFName);
             Thread.Sleep(3000);
-            Assert.AreEqual(driver.FindElement(PharmacyValidation).Text, PFName);
+            Assert.AreEqual(PFName , driver.FindElement(PharmacyValidation).Text);
         }
     }
 }

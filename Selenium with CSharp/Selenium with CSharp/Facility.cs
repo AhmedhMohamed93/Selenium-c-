@@ -100,7 +100,7 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void CreateNewIDN(String IDNName, String IDNID)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(newHealthSystem));
             driver.FindElement(newHealthSystem).Click();
             Thread.Sleep(5000);
@@ -121,11 +121,13 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void ImpersonateIDN(String IDNName)
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(ActAs));
             Thread.Sleep(2000);
             driver.FindElement(ActAs).Click();
             Thread.Sleep(1000);
             driver.FindElement(ActAs).SendKeys(IDNName);
-            Assert.AreEqual(driver.FindElement(IdnValidation).Text, "to " + IDNName);
+            Assert.AreEqual("to " + IDNName , driver.FindElement(IdnValidation).Text);
         }
 
 
@@ -157,18 +159,18 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void CreateNewFacility(String FacilityName, String FacilityID)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(newFacility));
             driver.FindElement(newFacility).Click();
             driver.FindElement(facilityName).SendKeys(FacilityName);
             driver.FindElement(facilityID).SendKeys(FacilityID);
-            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait1.Until(ExpectedConditions.ElementToBeClickable(SaveFacility));
             driver.FindElement(SaveFacility).Click();
             Thread.Sleep(3000);
-            driver.FindElement(facilitySearch).SendKeys(dataDriven.excelSetup(3, 5));
+            driver.FindElement(facilitySearch).SendKeys(FacilityName);
             Thread.Sleep(3000);
-            Assert.AreEqual(driver.FindElement(FacilityValidation).Text, FacilityName);
+            Assert.AreEqual(FacilityName , driver.FindElement(FacilityValidation).Text);
         }
     }
 }
