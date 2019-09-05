@@ -132,9 +132,9 @@ namespace Selenium_with_CSharp
             /* Upload EMR Items */
             SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\SC IV SET-Original.xls");
             SendKeys.SendWait("{Enter}");
-            //WebDriverWait wait3 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            //wait3.Until(ExpectedConditions.ElementExists(UploadSucessfully));
-            Thread.Sleep(3000);
+            WebDriverWait wait3 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
+            wait3.Until(ExpectedConditions.ElementExists(UploadSucessfully));
+            //Thread.Sleep(3000);
             driver.FindElement(SaveAlignmentProject).Click();
             WebDriverWait wait4 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait4.Until(ExpectedConditions.ElementToBeClickable(AlignmentSearch));

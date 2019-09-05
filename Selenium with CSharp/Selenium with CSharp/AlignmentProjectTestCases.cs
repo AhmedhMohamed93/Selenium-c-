@@ -67,7 +67,7 @@ namespace Selenium_with_CSharp
             homePage = new BDHomePage(driver);
             homePage.Navigate();
             test.Log(Status.Info, "System Navigating now");
-            homePage.Login(dataDriven.excelSetup(2, 1), dataDriven.excelSetup(2, 2));
+            homePage.Login(dataDriven.getUserName(), dataDriven.getUserPassword());
             test.Log(Status.Info, "System is Loging in now");
             homePage.ValidateLoginPageNavigation();
             test.Log(Status.Info, "System logged in successfully");
@@ -90,13 +90,13 @@ namespace Selenium_with_CSharp
             test = extent.CreateTest(" Validation Of Create New HealthSystem");
             facility_1 = new Facility(driver);
             BDHomePage home = new BDHomePage(driver);
-            home.LaunchingBDWebsite(dataDriven.excelSetup(2, 1), dataDriven.excelSetup(2, 2));
+            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
             test.Log(Status.Info, "System is navigated to BD website and logged in successfully");
             facility_1.NavigateToHealthSystems();
             test.Log(Status.Info, "System is navigated Health Systems Page");
-            facility_1.CreateNewIDN(dataDriven.excelSetup(1, 5), dataDriven.excelSetup(2, 5));
+            facility_1.CreateNewIDN(dataDriven.getIDNName(), dataDriven.getiDNID());
             test.Log(Status.Info, "New IDN is created successfully");
-            facility_1.ImpersonateIDN(dataDriven.excelSetup(1, 5));
+            facility_1.ImpersonateIDN(dataDriven.getIDNName());
             test.Log(Status.Info, "New IDN is impersonated successfully");
 
         }
@@ -117,13 +117,13 @@ namespace Selenium_with_CSharp
             test = extent.CreateTest(" Validation Of Create New Facility");
             facility_1 = new Facility(driver);
             BDHomePage home = new BDHomePage(driver);
-            home.LaunchingBDWebsite(dataDriven.excelSetup(2, 1), dataDriven.excelSetup(2, 2));
+            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
             test.Log(Status.Info, "System is navigated to BD website and logged in successfully");
-            facility_1.ImpersonateIDN(dataDriven.excelSetup(1, 5));
+            facility_1.ImpersonateIDN(dataDriven.getIDNName());
             test.Log(Status.Info, "The created IDN is impersonated successfully");
             facility_1.NavigateToFacilityAndRegion();
             test.Log(Status.Info, "System is navigated to Regions and Facilities successfully");
-            facility_1.CreateNewFacility(dataDriven.excelSetup(3, 5), dataDriven.excelSetup(4, 5));
+            facility_1.CreateNewFacility(dataDriven.getFacilityName(), dataDriven.getFacilityID());
             test.Log(Status.Info, "New Facility is created successfully");
         }
 
@@ -145,13 +145,13 @@ namespace Selenium_with_CSharp
             BDHomePage home = new BDHomePage(driver);
             pharm_1 = new Pharmacy(driver);
             facility_1 = new Facility(driver);
-            home.LaunchingBDWebsite(dataDriven.excelSetup(2, 1), dataDriven.excelSetup(2, 2));
+            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
             test.Log(Status.Info, "System is navigated to BD website and logged in successfully");
-            facility_1.ImpersonateIDN(dataDriven.excelSetup(1, 5));
+            facility_1.ImpersonateIDN(dataDriven.getIDNName());
             test.Log(Status.Info, "The created IDN is impersonated successfully");
             pharm_1.NavigateToPharmacyFormualries();
             test.Log(Status.Info, "System is navigated to Pharmacy Formularies Page successfully");
-            pharm_1.CreateNewPharmacyFormualry(dataDriven.excelSetup(5, 5), dataDriven.excelSetup(6, 5), dataDriven.excelSetup(7, 5), dataDriven.excelSetup(3, 5));
+            pharm_1.CreateNewPharmacyFormualry(dataDriven.getPharmacyFormularyName(), dataDriven.getPharmacyFormularyID(), dataDriven.getPFvendor(), dataDriven.getFacilityName());
             test.Log(Status.Info, "New Pharmacy Formualry is created successfully");
         }
 
