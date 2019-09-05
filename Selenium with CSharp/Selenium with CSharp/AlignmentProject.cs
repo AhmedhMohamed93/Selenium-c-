@@ -102,7 +102,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public void CreateNewPharmacyAlignmentProject(String AlignmentprojectName, String EMRformualry)
+        public void CreateNewAlignmentProject(String AlignmentprojectName, String EMRformualry)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(20));
             wait.Until(ExpectedConditions.ElementToBeClickable(NewalignmentProjectBtn));
