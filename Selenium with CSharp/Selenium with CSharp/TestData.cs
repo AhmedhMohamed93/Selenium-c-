@@ -13,7 +13,7 @@ namespace Selenium_with_CSharp
        public String excelSetup(int x, int y)
         {
             excel.Application xapp = new excel.Application();
-            excel.Workbook xworkbook = xapp.Workbooks.Open("C:\\Users\\ahmed.mohamed\\Documents\\GitHub\\Selenium-c-\\Selenium with CSharp\\Selenium with CSharp\\TestData");
+            excel.Workbook xworkbook = xapp.Workbooks.Open("C:\\Users\\ahmed.mohamed\\Documents\\GitHub\\Selenium-c-\\Selenium with CSharp\\Selenium with CSharp\\TestData2");
             excel.Worksheet xworksheet = xworkbook.Sheets[1];
             excel.Range xrange = xworksheet.UsedRange;
             return xrange.Cells[x][y].value2;

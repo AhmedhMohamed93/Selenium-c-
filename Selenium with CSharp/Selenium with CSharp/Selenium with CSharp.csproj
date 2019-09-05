@@ -151,6 +151,7 @@
     </Compile>
     <Compile Include="TestBase.cs" />
     <Compile Include="TestData.cs" />
+    <Compile Include="Validations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -35,7 +35,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          *   Test Method Name : BD_ValidateLaunchWebsite()                                                  *
          *   Inputs           : String browser Name                                                         *
-         *   Objective        : This Test is validatiting successful navigation to the BD Website           *
+         *   Objective        : This Test is validating successful navigation to the BD Website             *
          *                                                                                                  *
          ****************************************************************************************************/
 
@@ -57,7 +57,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          *   Test Method Name : BD_LoginSuccessfully()                                                      *
          *   Inputs           : String browser Name                                                         *
-         *   Objective        : This Test is validatiting successful Login to the BD Website                *
+         *   Objective        : This Test is validating successful Login to the BD Website                  *
          *                                                                                                  *
          ****************************************************************************************************/
         [Test, Order(2)]

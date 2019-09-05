@@ -109,6 +109,7 @@ namespace Selenium_with_CSharp
             driver.FindElement(HealthSysID).SendKeys(IDNID);
             driver.FindElement(AnchorProduct).Click();
             driver.FindElement(saveBtn).Click();
+            Thread.Sleep(5000);
         }
 
         /****************************************************************************************************
