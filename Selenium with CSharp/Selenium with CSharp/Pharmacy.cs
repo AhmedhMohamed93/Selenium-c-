@@ -75,6 +75,7 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void NavigateToPharmacyFormualries()
         {
+            waitUntilPageLoad();
             Actions act = new Actions(driver);
             act.MoveToElement(driver.FindElement(Formularies)).Perform();
             driver.FindElement(PharmacyFormualry).Click();
@@ -95,27 +96,19 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void CreateNewPharmacyFormualry(String PFName, String PFID, String PFVendor, String FacilityName)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait.Until(ExpectedConditions.ElementToBeClickable(NewPF));
+            waitUntilPageLoad();
             driver.FindElement(NewPF).Click();
-            Thread.Sleep(1000);
             driver.FindElement(PhFName).SendKeys(PFName);
-            Thread.Sleep(1000);
             driver.FindElement(PhFID).SendKeys(PFID);
-            Thread.Sleep(1000);
             driver.FindElement(Vendor).Click();
-            Thread.Sleep(1000);
             driver.FindElement(Vendor).SendKeys(PFVendor);
-            Thread.Sleep(1000);
             driver.FindElement(associatedFacility).Click();
-            Thread.Sleep(1000);
             driver.FindElement(associatedFacility).SendKeys(FacilityName);
-            Thread.Sleep(1000);
             driver.FindElement(associatedFacilityAdd).Click();
             driver.FindElement(SavePF).Click();
-            Thread.Sleep(1000);
+            waitUntilPageLoad();
             driver.FindElement(PharmacySearch).SendKeys(PFName);
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             Assert.AreEqual(PFName , driver.FindElement(PharmacyValidation).Text);
         }
     }

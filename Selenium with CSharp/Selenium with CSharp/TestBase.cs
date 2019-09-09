@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,14 @@ namespace Selenium_with_CSharp
         /* Initialization of Data Driven Object */
 
         protected TestData dataDriven = new TestData();
+
+        /****************************************************************************************************
+         *                                                                                                  *
+         *                                           Locators                                               *
+         *                                                                                                  *
+         ****************************************************************************************************/
+
+        By WaitCondition = By.CssSelector("ajax-loader > div.loadingplaceholder");
 
 
         /****************************************************************************************************
@@ -126,14 +135,47 @@ namespace Selenium_with_CSharp
 
         /****************************************************************************************************
          *                                                                                                  *
-         *   Method Name : End()                                                                            *
-         *   Inputs      : void                                                                             *
+         *   Method Name : waituntillfinshUpload()                                                          *
+         *   Inputs      : By element                                                                       *
          *   Outputs     : void                                                                             *
-         *   Description : This Method is to Generate Extent Report for each test                           *
+         *   Description : This Method is to wait until finishing upload GRE file ans also IV File          *
          *                                                                                                  *
          ****************************************************************************************************/
 
-        [TearDown]
+        public void waituntillfinshUpload(By element)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+            wait.Until(ExpectedConditions.ElementExists(element));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(element));
+        }
+
+
+        /****************************************************************************************************
+         *                                                                                                  *
+         *   Method Name : waituntillfinshUpload()                                                          *
+         *   Inputs      : void                                                                             *
+         *   Outputs     : void                                                                             *
+         *   Description : This Method is to wait until ajax loader finish loading the page                 *
+         *                                                                                                  *
+         ****************************************************************************************************/
+        public void waitUntilPageLoad()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(WaitCondition));
+	    }
+
+
+
+    /****************************************************************************************************
+     *                                                                                                  *
+     *   Method Name : End()                                                                            *
+     *   Inputs      : void                                                                             *
+     *   Outputs     : void                                                                             *
+     *   Description : This Method is to Generate Extent Report for each test                           *
+     *                                                                                                  *
+     ****************************************************************************************************/
+
+    [TearDown]
         public void End()
         {
             var status = TestContext.CurrentContext.Result.Outcome.Status;

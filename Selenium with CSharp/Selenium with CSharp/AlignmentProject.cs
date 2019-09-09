@@ -48,7 +48,8 @@ namespace Selenium_with_CSharp
         By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
         By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
         By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
-        By UploadSucessfully = By.XPath("//div[@class='toast-text ng-star-inserted']");
+        By UploadSucessfully = By.XPath("//span[contains(text(),'File Uploaded.')]");
+        By selectPF = By.XPath("//a[@id='listItemEMRFormularyList1']");
 
 
 
@@ -104,43 +105,32 @@ namespace Selenium_with_CSharp
 
         public void CreateNewAlignmentProject(String AlignmentprojectName, String EMRformualry)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(20));
-            wait.Until(ExpectedConditions.ElementToBeClickable(NewalignmentProjectBtn));
+            waitUntilPageLoad();
             driver.FindElement(NewalignmentProjectBtn).Click();
-            Thread.Sleep(3000);
             driver.FindElement(AlignmentProjectName).SendKeys(AlignmentprojectName);
-            Thread.Sleep(3000);
             driver.FindElement(EMRFormualry).Click();
-            Thread.Sleep(2000);
             driver.FindElement(EMRFormualry).SendKeys(EMRformualry);
-            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(20));
-            wait1.Until(ExpectedConditions.ElementToBeClickable(Facility));
+            driver.FindElement(selectPF).Click();
             driver.FindElement(Facility).Click();
-            Thread.Sleep(2000);
             driver.FindElement(UploadGRE).Click();
-            Thread.Sleep(2000);
             /* Ulpoad GRE File */
+            Thread.Sleep(2000);
             SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\Infusion_Demo.gre");
             SendKeys.SendWait("{Enter}");
-            WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait2.Until(ExpectedConditions.ElementExists(UploadSucessfully));
+            waituntillfinshUpload(UploadSucessfully);
             driver.FindElement(EMRItems).Click();
-            Thread.Sleep(2000);
             driver.FindElement(EMRItemsSelect).Click();
             driver.FindElement(UploadEMR).Click();
-            Thread.Sleep(4000);
             /* Upload EMR Items */
+            Thread.Sleep(2000);
             SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\SC IV SET-Original.xls");
             SendKeys.SendWait("{Enter}");
-            WebDriverWait wait3 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait3.Until(ExpectedConditions.ElementExists(UploadSucessfully));
-            //Thread.Sleep(3000);
+            waituntillfinshUpload(UploadSucessfully);
             driver.FindElement(SaveAlignmentProject).Click();
-            WebDriverWait wait4 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait4.Until(ExpectedConditions.ElementToBeClickable(AlignmentSearch));
+            waitUntilPageLoad();
+            Thread.Sleep(2000);
             driver.FindElement(AlignmentSearch).SendKeys(AlignmentprojectName);
-            WebDriverWait wait5 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait5.Until(ExpectedConditions.ElementIsVisible(AlignmentProjectValidation));
+            Thread.Sleep(2000);
             Assert.AreEqual(AlignmentprojectName, driver.FindElement(AlignmentProjectValidation).Text);
         }
     }

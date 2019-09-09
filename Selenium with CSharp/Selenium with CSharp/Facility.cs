@@ -100,15 +100,18 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void CreateNewIDN(String IDNName, String IDNID)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait.Until(ExpectedConditions.ElementToBeClickable(newHealthSystem));
+            waitUntilPageLoad();
             driver.FindElement(newHealthSystem).Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
             driver.FindElement(HealthSysName).SendKeys(IDNName);
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
             driver.FindElement(HealthSysID).SendKeys(IDNID);
             driver.FindElement(AnchorProduct).Click();
             driver.FindElement(saveBtn).Click();
+            waitUntilPageLoad();
+            driver.FindElement(ActAs).Click();
+            driver.FindElement(ActAs).SendKeys(IDNName);
+            Assert.AreEqual("to " + IDNName, driver.FindElement(IdnValidation).Text);
         }
 
         /****************************************************************************************************
@@ -121,11 +124,8 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void ImpersonateIDN(String IDNName)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait.Until(ExpectedConditions.ElementToBeClickable(ActAs));
-            Thread.Sleep(2000);
+            waitUntilPageLoad();
             driver.FindElement(ActAs).Click();
-            Thread.Sleep(1000);
             driver.FindElement(ActAs).SendKeys(IDNName);
             Assert.AreEqual("to " + IDNName , driver.FindElement(IdnValidation).Text);
         }
@@ -141,7 +141,7 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void NavigateToFacilityAndRegion()
         {
-            Thread.Sleep(3000);
+            waitUntilPageLoad();
             Actions act = new Actions(driver);
             act.MoveToElement(driver.FindElement(adminMenu)).Perform();
             driver.FindElement(facility).Click();
@@ -159,17 +159,14 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         public void CreateNewFacility(String FacilityName, String FacilityID)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait.Until(ExpectedConditions.ElementToBeClickable(newFacility));
+            waitUntilPageLoad();
             driver.FindElement(newFacility).Click();
             driver.FindElement(facilityName).SendKeys(FacilityName);
             driver.FindElement(facilityID).SendKeys(FacilityID);
-            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
-            wait1.Until(ExpectedConditions.ElementToBeClickable(SaveFacility));
             driver.FindElement(SaveFacility).Click();
-            Thread.Sleep(3000);
+            waitUntilPageLoad();
             driver.FindElement(facilitySearch).SendKeys(FacilityName);
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             Assert.AreEqual(FacilityName , driver.FindElement(FacilityValidation).Text);
         }
     }
