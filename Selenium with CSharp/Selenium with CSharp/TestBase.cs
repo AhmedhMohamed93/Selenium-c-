@@ -152,7 +152,7 @@ namespace Selenium_with_CSharp
 
         /****************************************************************************************************
          *                                                                                                  *
-         *   Method Name : waituntillfinshUpload()                                                          *
+         *   Method Name : waituntillPageUpload()                                                          *
          *   Inputs      : void                                                                             *
          *   Outputs     : void                                                                             *
          *   Description : This Method is to wait until ajax loader finish loading the page                 *
