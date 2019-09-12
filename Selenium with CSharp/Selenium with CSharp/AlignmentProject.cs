@@ -110,7 +110,8 @@ namespace Selenium_with_CSharp
             driver.FindElement(AlignmentProjectName).SendKeys(AlignmentprojectName);
             driver.FindElement(EMRFormualry).Click();
             driver.FindElement(EMRFormualry).SendKeys(EMRformualry);
-            driver.FindElement(selectPF).Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            wait.Until(ExpectedConditions.ElementToBeClickable(Facility));
             driver.FindElement(Facility).Click();
             driver.FindElement(UploadGRE).Click();
             /* Ulpoad GRE File */

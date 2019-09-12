@@ -39,6 +39,7 @@ namespace Selenium_with_CSharp
         By HealthSysID = By.XPath("//input[@id='HealthSystemOrgID']");
         By AnchorProduct = By.XPath("//label[contains(text(),'Alaris')]");
         By saveBtn = By.XPath("//button[@id='SaveHealthSystemOrg']");
+        By idnComplete = By.XPath("//body[@class='modal-open']/app/div[@id='main-wrapper']/ng-component[@class='ng-star-inserted']/modal/div[@class='modal fade in show']/div[@class='modal-dialog modal-lg']/div[@class='modal-content']/div[@class='modal-body']/form[@id='FormHealthSystemOrg']/div[@class='row']/div[2]");
         By ActAs = By.XPath("//input[@id='ActingAsDropdown']");
         By IdnValidation = By.XPath("(//div[@class='bd-title']/span)[1]");
         By facility = By.XPath("//span[contains(text(),'Regions and Facilities')]");
@@ -108,10 +109,8 @@ namespace Selenium_with_CSharp
             driver.FindElement(HealthSysID).SendKeys(IDNID);
             driver.FindElement(AnchorProduct).Click();
             driver.FindElement(saveBtn).Click();
-            waitUntilPageLoad();
-            driver.FindElement(ActAs).Click();
-            driver.FindElement(ActAs).SendKeys(IDNName);
-            Assert.AreEqual("to " + IDNName, driver.FindElement(IdnValidation).Text);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(idnComplete));
         }
 
         /****************************************************************************************************
