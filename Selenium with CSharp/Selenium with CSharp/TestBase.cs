@@ -144,7 +144,7 @@ namespace Selenium_with_CSharp
 
         public void waituntillfinshUpload(By element)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait.Until(ExpectedConditions.ElementExists(element));
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(element));
         }

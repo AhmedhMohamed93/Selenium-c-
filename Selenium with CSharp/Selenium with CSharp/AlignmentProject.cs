@@ -116,7 +116,7 @@ namespace Selenium_with_CSharp
             driver.FindElement(UploadGRE).Click();
             /* Ulpoad GRE File */
             Thread.Sleep(2000);
-            SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\Infusion_Demo.gre");
+            SendKeys.SendWait(@"C:\Users\Ahmed.Mohamed\Documents\GitHub\Selenium-c-\Selenium with CSharp\Selenium with CSharp\Infusion_Demo.gre");
             SendKeys.SendWait("{Enter}");
             waituntillfinshUpload(UploadSucessfully);
             driver.FindElement(EMRItems).Click();
@@ -124,7 +124,7 @@ namespace Selenium_with_CSharp
             driver.FindElement(UploadEMR).Click();
             /* Upload EMR Items */
             Thread.Sleep(2000);
-            SendKeys.SendWait(@"C:\Users\ahmed.mohamed\source\repos\POC\POC\Needed Files\SC IV SET-Original.xls");
+            SendKeys.SendWait(@"C:\Users\Ahmed.Mohamed\Documents\GitHub\Selenium-c-\Selenium with CSharp\Selenium with CSharp\SC IV SET-Original.xls");
             SendKeys.SendWait("{Enter}");
             waituntillfinshUpload(UploadSucessfully);
             driver.FindElement(SaveAlignmentProject).Click();
