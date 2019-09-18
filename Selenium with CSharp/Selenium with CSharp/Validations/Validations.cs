@@ -14,9 +14,9 @@ namespace Selenium_with_CSharp
          *                            BD_ValidateLaunchWebsite() Test Log Strings                           *
          *                                                                                                  *
          ****************************************************************************************************/
-        String launchStart = "Validation Of Launching BD Website";
-        String Navigation = "System Navigating now";
-        String LaunchStatus = "System Navigated successfully";
+        readonly String launchStart = "Validation Of Launching BD Website";
+        readonly String Navigation = "System Navigating now";
+        readonly String LaunchStatus = "System Navigated successfully";
 
 
         /****************************************************************************************************
@@ -25,17 +25,17 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public String getlaunchStart()
+        public String GetlaunchStart()
         {
             return launchStart;
         }
 
-        public String getnavigationString()
+        public String GetnavigationString()
         {
             return Navigation;
         }
 
-        public String getlaunchStatus()
+        public String GetlaunchStatus()
         {
             return LaunchStatus;
         }
@@ -47,8 +47,8 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String loginStart = "Validation Of Login successfully to BD Website";
-        String Logging = "System is Logging in now";
+        readonly String loginStart = "Validation Of Login successfully to BD Website";
+        readonly String Logging = "System is Logging in now";
 
 
         /****************************************************************************************************
@@ -57,17 +57,17 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public String getloginStart()
+        public String GetloginStart()
         {
             return loginStart;
         }
 
-        public String getlogging()
+        public String Getlogging()
         {
             return Logging;
         }
 
-        public String getloginStatus()
+        public String GetloginStatus()
         {
             return LaunchStatus;
         }
@@ -78,11 +78,11 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String CreateIDNStart = "Validation Of Create New HealthSystem";
-        String Launching = "System is navigated to BD website and logged in successfully";
-        String IDNNavigation = "System is navigated Health Systems Page";
-        String successfulCreationOfIDN = "New IDN is created successfully";
-        String CreationStatus = "New IDN is impersonated successfully";
+        readonly String CreateIDNStart = "Validation Of Create New HealthSystem";
+        readonly String Launching = "System is navigated to BD website and logged in successfully";
+        readonly String IDNNavigation = "System is navigated Health Systems Page";
+        readonly String successfulCreationOfIDN = "New IDN is created successfully";
+        readonly String CreationStatus = "New IDN is impersonated successfully";
 
 
         /****************************************************************************************************
@@ -91,27 +91,27 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public String getCreateIDNStart()
+        public String GetCreateIDNStart()
         {
             return CreateIDNStart;
         }
 
-        public String getLaunching()
+        public String GetLaunching()
         {
             return Launching;
         }
 
-        public String getIDNNavigation()
+        public String GetIDNNavigation()
         {
             return IDNNavigation;
         }
 
-        public String getsuccessfulCreationOfIDN()
+        public String GetsuccessfulCreationOfIDN()
         {
             return successfulCreationOfIDN;
         }
 
-        public String getCreationStatus()
+        public String GetCreationStatus()
         {
             return CreationStatus;
         }
@@ -122,10 +122,10 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String CreateFacilityStart = "Validation Of Create New Facility";
-        String facilityNavigation = "System is navigated to Regions and Facilities successfully";
-        String facilitycreationStatus = "New Facility is created successfully";
-        String Impersonate = "The created IDN is impersonated successfully";
+        readonly String CreateFacilityStart = "Validation Of Create New Facility";
+        readonly String facilityNavigation = "System is navigated to Regions and Facilities successfully";
+        readonly String facilitycreationStatus = "New Facility is created successfully";
+        readonly String Impersonate = "The created IDN is impersonated successfully";
 
 
 
@@ -135,22 +135,22 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public String getCreateFacilityStart()
+        public String GetCreateFacilityStart()
         {
             return CreateFacilityStart;
         }
 
-        public String getImpersonate()
+        public String GetImpersonate()
         {
             return Impersonate;
         }
 
-        public String getfacilityNavigation()
+        public String GetfacilityNavigation()
         {
             return facilityNavigation;
         }
 
-        public String getfacilitycreationStatus()
+        public String GetfacilitycreationStatus()
         {
             return facilitycreationStatus;
         }
@@ -161,9 +161,9 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String CreatePharmacyStart = "Validation Of Create New Pharmacy Formulary";
-        String pharmacyNavigation = "System is navigated to Pharmacy Formularies Page successfully";
-        String pharmacycreationStatus = "New Pharmacy Formualry is created successfully";
+        readonly String CreatePharmacyStart = "Validation Of Create New Pharmacy Formulary";
+        readonly String pharmacyNavigation = "System is navigated to Pharmacy Formularies Page successfully";
+        readonly String pharmacycreationStatus = "New Pharmacy Formualry is created successfully";
 
 
 
@@ -173,17 +173,17 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public String getCreatePharmacyStart()
+        public String GetCreatePharmacyStart()
         {
             return CreatePharmacyStart;
         }
 
-        public String getpharmacycreationStatus()
+        public String GetpharmacycreationStatus()
         {
             return pharmacycreationStatus;
         }
 
-        public String getpharmacyNavigation()
+        public String GetpharmacyNavigation()
         {
             return pharmacyNavigation;
         }
@@ -194,9 +194,9 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String CreateProjectStart = "Validation Of Create New Alignment Project";
-        String AlignmentNavigation = "System is navigated to Alignment Projects Page successfully";
-        String AlignmentcreationStatus = "New Alignment Project is created successfully";
+        readonly String CreateProjectStart = "Validation Of Create New Alignment Project";
+        readonly String AlignmentNavigation = "System is navigated to Alignment Projects Page successfully";
+        readonly String AlignmentcreationStatus = "New Alignment Project is created successfully";
 
 
 
@@ -206,17 +206,17 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public String getCreateProjectStart()
+        public String GetCreateProjectStart()
         {
             return CreateProjectStart;
         }
 
-        public String getAlignmentcreationStatus()
+        public String GetAlignmentcreationStatus()
         {
             return AlignmentcreationStatus;
         }
 
-        public String getAlignmentNavigation()
+        public String GetAlignmentNavigation()
         {
             return AlignmentNavigation;
         }

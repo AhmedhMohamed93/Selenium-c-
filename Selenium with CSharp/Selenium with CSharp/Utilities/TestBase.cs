@@ -42,7 +42,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        By WaitCondition = By.CssSelector("ajax-loader > div.loadingplaceholder");
+        readonly By WaitCondition = By.CssSelector("ajax-loader > div.loadingplaceholder");
 
 
         /****************************************************************************************************
@@ -79,7 +79,7 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to Handle multiple Extent Report objects                          *
          *                                                                                                  *
          ****************************************************************************************************/
-        public static ExtentReports getInstance()
+        public static ExtentReports GetInstance()
         {
             if (extent == null)
             {
@@ -129,7 +129,7 @@ namespace Selenium_with_CSharp
 
             
             htmlReporter.Config.ReportName = "Generate Alignment Project Test Report";
-            getInstance();
+            GetInstance();
             extent.AttachReporter(htmlReporter);
         }
 
@@ -142,7 +142,8 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        public void waituntillfinshUpload(By element)
+        [Obsolete]
+        public void WaituntillfinshUpload(By element)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
             wait.Until(ExpectedConditions.ElementExists(element));
@@ -158,7 +159,8 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to wait until ajax loader finish loading the page                 *
          *                                                                                                  *
          ****************************************************************************************************/
-        public void waitUntilPageLoad()
+        [Obsolete]
+        public void WaitUntilPageLoad()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(WaitCondition));

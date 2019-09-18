@@ -35,21 +35,21 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        By Infusion = By.XPath("//a[contains(text(),'Infusion')]");
-        By alignmentProject = By.XPath("//span[contains(text(),'Alignment Projects')]");
-        By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
-        By AlignmentProjectName = By.XPath("//input[@id='Name']");
-        By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
-        By Facility = By.XPath("//div[@class= 'checkbox']/label");
-        By UploadGRE = By.XPath("//label[@class='btn btn-default']");
-        By EMRItems = By.XPath("//div[@class='col-md-4 IvLabel']//input[1]");
-        By EMRItemsSelect = By.XPath("//a[@id='listItemIVTypesList2']");
-        By UploadEMR = By.XPath("//file-uploader[@id='IvFiles Uploader']//label[@class='btn btn-default'][contains(text(),'Browse')]");
-        By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
-        By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
-        By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
-        By UploadSucessfully = By.XPath("//span[contains(text(),'File Uploaded.')]");
-        By selectPF = By.XPath("//a[@id='listItemEMRFormularyList1']");
+        readonly By Infusion = By.XPath("//a[contains(text(),'Infusion')]");
+        readonly By alignmentProject = By.XPath("//span[contains(text(),'Alignment Projects')]");
+        readonly By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
+        readonly By AlignmentProjectName = By.XPath("//input[@id='Name']");
+        readonly By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
+        readonly By Facility = By.XPath("//div[@class= 'checkbox']/label");
+        readonly By UploadGRE = By.XPath("//label[@class='btn btn-default']");
+        readonly By EMRItems = By.XPath("//div[@class='col-md-4 IvLabel']//input[1]");
+        readonly By EMRItemsSelect = By.XPath("//a[@id='listItemIVTypesList2']");
+        readonly By UploadEMR = By.XPath("//file-uploader[@id='IvFiles Uploader']//label[@class='btn btn-default'][contains(text(),'Browse')]");
+        readonly By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
+        readonly By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
+        readonly By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        readonly By UploadSucessfully = By.XPath("//span[contains(text(),'File Uploaded.')]");
+        //By selectPF = By.XPath("//a[@id='listItemEMRFormularyList1']");
 
 
 
@@ -103,9 +103,10 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
+        [Obsolete]
         public void CreateNewAlignmentProject(String AlignmentprojectName, String EMRformualry)
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(NewalignmentProjectBtn).Click();
             driver.FindElement(AlignmentProjectName).SendKeys(AlignmentprojectName);
             driver.FindElement(EMRFormualry).Click();
@@ -118,7 +119,7 @@ namespace Selenium_with_CSharp
             Thread.Sleep(2000);
             SendKeys.SendWait(@"C:\Users\Ahmed.Mohamed\Documents\GitHub\Selenium-c-\Selenium with CSharp\Selenium with CSharp\Needed Files\Infusion_Demo.gre");
             SendKeys.SendWait("{Enter}");
-            waituntillfinshUpload(UploadSucessfully);
+            WaituntillfinshUpload(UploadSucessfully);
             driver.FindElement(EMRItems).Click();
             driver.FindElement(EMRItemsSelect).Click();
             driver.FindElement(UploadEMR).Click();
@@ -126,9 +127,9 @@ namespace Selenium_with_CSharp
             Thread.Sleep(2000);
             SendKeys.SendWait(@"C:\Users\Ahmed.Mohamed\Documents\GitHub\Selenium-c-\Selenium with CSharp\Selenium with CSharp\Needed Files\SC IV SET-Original.xls");
             SendKeys.SendWait("{Enter}");
-            waituntillfinshUpload(UploadSucessfully);
+            WaituntillfinshUpload(UploadSucessfully);
             driver.FindElement(SaveAlignmentProject).Click();
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             Thread.Sleep(2000);
             driver.FindElement(AlignmentSearch).SendKeys(AlignmentprojectName);
             Thread.Sleep(2000);

@@ -32,23 +32,23 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        By adminMenu = By.XPath("//a[contains(text(),'Admin')]");
-        By healthSystemDropDown = By.XPath("//span[contains(text(),'Health Systems')]");
-        By newHealthSystem = By.XPath("//button[@id='NewHealthSystemOrg']");
-        By HealthSysName = By.XPath("//input[@id='HealthSystemOrgName']");
-        By HealthSysID = By.XPath("//input[@id='HealthSystemOrgID']");
-        By AnchorProduct = By.XPath("//label[contains(text(),'Alaris')]");
-        By saveBtn = By.XPath("//button[@id='SaveHealthSystemOrg']");
-        By idnComplete = By.XPath("//body[@class='modal-open']/app/div[@id='main-wrapper']/ng-component[@class='ng-star-inserted']/modal/div[@class='modal fade in show']/div[@class='modal-dialog modal-lg']/div[@class='modal-content']/div[@class='modal-body']/form[@id='FormHealthSystemOrg']/div[@class='row']/div[2]");
-        By ActAs = By.XPath("//input[@id='ActingAsDropdown']");
-        By IdnValidation = By.XPath("(//div[@class='bd-title']/span)[1]");
-        By facility = By.XPath("//span[contains(text(),'Regions and Facilities')]");
-        By newFacility = By.XPath("//button[@id='NewRegionFacility']");
-        By facilityName = By.XPath("//input[@id='FacilityName']");
-        By facilityID = By.XPath("//input[@id='FacilityUniqueId']");
-        By SaveFacility = By.XPath("//button[@id='SaveFacilityRegion']");
-        By facilitySearch = By.XPath("//input[@id='SearchRegionFacility']");
-        By FacilityValidation = By.XPath("//td[2]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        readonly By adminMenu = By.XPath("//a[contains(text(),'Admin')]");
+        readonly By healthSystemDropDown = By.XPath("//span[contains(text(),'Health Systems')]");
+        readonly By newHealthSystem = By.XPath("//button[@id='NewHealthSystemOrg']");
+        readonly By HealthSysName = By.XPath("//input[@id='HealthSystemOrgName']");
+        readonly By HealthSysID = By.XPath("//input[@id='HealthSystemOrgID']");
+        readonly By AnchorProduct = By.XPath("//label[contains(text(),'Alaris')]");
+        readonly By saveBtn = By.XPath("//button[@id='SaveHealthSystemOrg']");
+        readonly By idnComplete = By.XPath("//body[@class='modal-open']/app/div[@id='main-wrapper']/ng-component[@class='ng-star-inserted']/modal/div[@class='modal fade in show']/div[@class='modal-dialog modal-lg']/div[@class='modal-content']/div[@class='modal-body']/form[@id='FormHealthSystemOrg']/div[@class='row']/div[2]");
+        readonly By ActAs = By.XPath("//input[@id='ActingAsDropdown']");
+        readonly By IdnValidation = By.XPath("(//div[@class='bd-title']/span)[1]");
+        readonly By facility = By.XPath("//span[contains(text(),'Regions and Facilities')]");
+        readonly By newFacility = By.XPath("//button[@id='NewRegionFacility']");
+        readonly By facilityName = By.XPath("//input[@id='FacilityName']");
+        readonly By facilityID = By.XPath("//input[@id='FacilityUniqueId']");
+        readonly By SaveFacility = By.XPath("//button[@id='SaveFacilityRegion']");
+        readonly By facilitySearch = By.XPath("//input[@id='SearchRegionFacility']");
+        readonly By FacilityValidation = By.XPath("//td[2]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
 
 
         /****************************************************************************************************
@@ -99,9 +99,10 @@ namespace Selenium_with_CSharp
          *               : displayed dialog                                                                 *
          *                                                                                                  *
          ****************************************************************************************************/
+        [Obsolete]
         public void CreateNewIDN(String IDNName, String IDNID)
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(newHealthSystem).Click();
             Thread.Sleep(1000);
             driver.FindElement(HealthSysName).SendKeys(IDNName);
@@ -121,9 +122,10 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to navigate to the created IDN from Act as dropdown list          *
          *                                                                                                  *
          ****************************************************************************************************/
+        [Obsolete]
         public void ImpersonateIDN(String IDNName)
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(ActAs).Click();
             driver.FindElement(ActAs).SendKeys(IDNName);
             Assert.AreEqual("to " + IDNName , driver.FindElement(IdnValidation).Text);
@@ -138,9 +140,10 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to navigate to "Facilities" ana Regions from "Admin" menu         *
          *                                                                                                  *
          ****************************************************************************************************/
+        [Obsolete]
         public void NavigateToFacilityAndRegion()
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             Actions act = new Actions(driver);
             act.MoveToElement(driver.FindElement(adminMenu)).Perform();
             driver.FindElement(facility).Click();
@@ -156,14 +159,15 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to Create new Facility and fill all required fields               *
          *                                                                                                  *
          ****************************************************************************************************/
+        [Obsolete]
         public void CreateNewFacility(String FacilityName, String FacilityID)
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(newFacility).Click();
             driver.FindElement(facilityName).SendKeys(FacilityName);
             driver.FindElement(facilityID).SendKeys(FacilityID);
             driver.FindElement(SaveFacility).Click();
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(facilitySearch).SendKeys(FacilityName);
             Thread.Sleep(2000);
             Assert.AreEqual(FacilityName , driver.FindElement(FacilityValidation).Text);

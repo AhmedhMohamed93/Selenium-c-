@@ -31,17 +31,17 @@ namespace Selenium_with_CSharp
          *                                           Locators                                               *
          *                                                                                                  *
          ****************************************************************************************************/
-        By Formularies = By.XPath("//a[contains(text(),'Formularies')]");
-        By PharmacyFormualry = By.XPath("//span[contains(text(),'Pharmacy Formularies')]");
-        By NewPF = By.XPath("//button[@id='AddPharmacy']");
-        By PhFName = By.XPath("//input[@id='Name']");
-        By PhFID = By.XPath("//input[@id='ID']");
-        By Vendor = By.XPath("//div[@class='ng-star-inserted']//input[1]");
-        By associatedFacility = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//input[1]");
-        By associatedFacilityAdd = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//button[@id='bdassociationcontrol1-add']");
-        By SavePF = By.XPath("//button[@id='SaveDetailPharmacyFormulary']");
-        By PharmacySearch = By.XPath("//input[@id='SearchItem']");
-        By PharmacyValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        readonly By Formularies = By.XPath("//a[contains(text(),'Formularies')]");
+        readonly By PharmacyFormualry = By.XPath("//span[contains(text(),'Pharmacy Formularies')]");
+        readonly By NewPF = By.XPath("//button[@id='AddPharmacy']");
+        readonly By PhFName = By.XPath("//input[@id='Name']");
+        readonly By PhFID = By.XPath("//input[@id='ID']");
+        readonly By Vendor = By.XPath("//div[@class='ng-star-inserted']//input[1]");
+        readonly By associatedFacility = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//input[1]");
+        readonly By associatedFacilityAdd = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//button[@id='bdassociationcontrol1-add']");
+        readonly By SavePF = By.XPath("//button[@id='SaveDetailPharmacyFormulary']");
+        readonly By PharmacySearch = By.XPath("//input[@id='SearchItem']");
+        readonly By PharmacyValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
 
         /****************************************************************************************************
          *                                                                                                  *
@@ -73,9 +73,10 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to hover Over "Admin" menu then select navigate to "HealthSyatem" *
          *                                                                                                  *
          ****************************************************************************************************/
+        [Obsolete]
         public void NavigateToPharmacyFormualries()
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             Actions act = new Actions(driver);
             act.MoveToElement(driver.FindElement(Formularies)).Perform();
             driver.FindElement(PharmacyFormualry).Click();
@@ -94,9 +95,10 @@ namespace Selenium_with_CSharp
          *               :  in the displayed dialog                                                         *
          *                                                                                                  *
          ****************************************************************************************************/
+        [Obsolete]
         public void CreateNewPharmacyFormualry(String PFName, String PFID, String PFVendor, String FacilityName)
         {
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(NewPF).Click();
             driver.FindElement(PhFName).SendKeys(PFName);
             driver.FindElement(PhFID).SendKeys(PFID);
@@ -106,7 +108,7 @@ namespace Selenium_with_CSharp
             driver.FindElement(associatedFacility).SendKeys(FacilityName);
             driver.FindElement(associatedFacilityAdd).Click();
             driver.FindElement(SavePF).Click();
-            waitUntilPageLoad();
+            WaitUntilPageLoad();
             driver.FindElement(PharmacySearch).SendKeys(PFName);
             Thread.Sleep(2000);
             Assert.AreEqual(PFName , driver.FindElement(PharmacyValidation).Text);

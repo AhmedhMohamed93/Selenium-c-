@@ -27,7 +27,7 @@ namespace Selenium_with_CSharp
         Pharmacy pharm_1;
         AlignmentProject project_1;
         BDHomePage homePage;
-        Validations validStrings = new Validations();
+        readonly Validations validStrings = new Validations();
 
 
 
@@ -41,15 +41,16 @@ namespace Selenium_with_CSharp
 
         [Test, Order(1)]
         [TestCaseSource(typeof(TestBase), "BrowserToRunWith")]
+        [Obsolete]
         public void BD_ValidateLaunchWebsite(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.getlaunchStart());
+            test = extent.CreateTest(validStrings.GetlaunchStart());
             homePage = new BDHomePage(driver);
             homePage.Navigate();
-            test.Log(Status.Info,validStrings.getnavigationString());
+            test.Log(Status.Info,validStrings.GetnavigationString());
             homePage.ValidateLaunchingPageSucessfully();
-            test.Log(Status.Info, validStrings.getlaunchStatus());
+            test.Log(Status.Info, validStrings.GetlaunchStatus());
         }
 
 
@@ -62,17 +63,18 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         [Test, Order(2)]
         [TestCaseSource(typeof(TestBase), "BrowserToRunWith")]
+        [Obsolete]
         public void BD_LoginSuccessfully(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.getloginStart());
+            test = extent.CreateTest(validStrings.GetloginStart());
             homePage = new BDHomePage(driver);
             homePage.Navigate();
-            test.Log(Status.Info, validStrings.getnavigationString());
-            homePage.Login(dataDriven.getUserName(), dataDriven.getUserPassword());
-            test.Log(Status.Info, validStrings.getlogging());
+            test.Log(Status.Info, validStrings.GetnavigationString());
+            homePage.Login(dataDriven.GetUserName(), dataDriven.GetUserPassword());
+            test.Log(Status.Info, validStrings.Getlogging());
             homePage.ValidateLoginPageNavigation();
-            test.Log(Status.Info, validStrings.getloginStatus());
+            test.Log(Status.Info, validStrings.GetloginStatus());
 
         }
 
@@ -86,20 +88,21 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         [Test, Order(3)]
         [TestCaseSource(typeof(TestBase), "BrowserToRunWith")]
+        [Obsolete]
         public void BD_ValidateCreationOfNewHealthSystem(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.getCreateIDNStart());
+            test = extent.CreateTest(validStrings.GetCreateIDNStart());
             facility_1 = new Facility(driver);
             BDHomePage home = new BDHomePage(driver);
-            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
-            test.Log(Status.Info, validStrings.getLaunching());
+            home.LaunchingBDWebsite(dataDriven.GetUserName(), dataDriven.GetUserPassword());
+            test.Log(Status.Info, validStrings.GetLaunching());
             facility_1.NavigateToHealthSystems();
-            test.Log(Status.Info, validStrings.getIDNNavigation());
-            facility_1.CreateNewIDN(dataDriven.getIDNName(), dataDriven.getiDNID());
-            test.Log(Status.Info, validStrings.getsuccessfulCreationOfIDN());
-            facility_1.ImpersonateIDN(dataDriven.getIDNName());
-            test.Log(Status.Info, validStrings.getCreationStatus());
+            test.Log(Status.Info, validStrings.GetIDNNavigation());
+            facility_1.CreateNewIDN(dataDriven.GetIDNName(), dataDriven.GetiDNID());
+            test.Log(Status.Info, validStrings.GetsuccessfulCreationOfIDN());
+            facility_1.ImpersonateIDN(dataDriven.GetIDNName());
+            test.Log(Status.Info, validStrings.GetCreationStatus());
 
         }
 
@@ -113,20 +116,21 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         [Test, Order(4)]
         [TestCaseSource(typeof(TestBase), "BrowserToRunWith")]
+        [Obsolete]
         public void BD_ValidateCreationOfNewFacility(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.getCreateFacilityStart());
+            test = extent.CreateTest(validStrings.GetCreateFacilityStart());
             facility_1 = new Facility(driver);
             BDHomePage home = new BDHomePage(driver);
-            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
-            test.Log(Status.Info, validStrings.getLaunching());
-            facility_1.ImpersonateIDN(dataDriven.getIDNName());
-            test.Log(Status.Info,validStrings.getImpersonate());
+            home.LaunchingBDWebsite(dataDriven.GetUserName(), dataDriven.GetUserPassword());
+            test.Log(Status.Info, validStrings.GetLaunching());
+            facility_1.ImpersonateIDN(dataDriven.GetIDNName());
+            test.Log(Status.Info,validStrings.GetImpersonate());
             facility_1.NavigateToFacilityAndRegion();
-            test.Log(Status.Info, validStrings.getfacilityNavigation());
-            facility_1.CreateNewFacility(dataDriven.getFacilityName(), dataDriven.getFacilityID());
-            test.Log(Status.Info, validStrings.getfacilitycreationStatus());
+            test.Log(Status.Info, validStrings.GetfacilityNavigation());
+            facility_1.CreateNewFacility(dataDriven.GetFacilityName(), dataDriven.GetFacilityID());
+            test.Log(Status.Info, validStrings.GetfacilitycreationStatus());
         }
 
 
@@ -140,21 +144,22 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         [Test, Order(5)]
         [TestCaseSource(typeof(TestBase), "BrowserToRunWith")]
+        [Obsolete]
         public void BD_ValidateCreationOfNewPharmacyFormualry(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.getCreatePharmacyStart());
+            test = extent.CreateTest(validStrings.GetCreatePharmacyStart());
             BDHomePage home = new BDHomePage(driver);
             pharm_1 = new Pharmacy(driver);
             facility_1 = new Facility(driver);
-            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
-            test.Log(Status.Info, validStrings.getLaunching());
-            facility_1.ImpersonateIDN(dataDriven.getIDNName());
-            test.Log(Status.Info, validStrings.getImpersonate());
+            home.LaunchingBDWebsite(dataDriven.GetUserName(), dataDriven.GetUserPassword());
+            test.Log(Status.Info, validStrings.GetLaunching());
+            facility_1.ImpersonateIDN(dataDriven.GetIDNName());
+            test.Log(Status.Info, validStrings.GetImpersonate());
             pharm_1.NavigateToPharmacyFormualries();
-            test.Log(Status.Info, validStrings.getpharmacyNavigation());
-            pharm_1.CreateNewPharmacyFormualry(dataDriven.getPharmacyFormularyName(), dataDriven.getPharmacyFormularyID(), dataDriven.getPFvendor(), dataDriven.getFacilityName());
-            test.Log(Status.Info, validStrings.getpharmacycreationStatus());
+            test.Log(Status.Info, validStrings.GetpharmacyNavigation());
+            pharm_1.CreateNewPharmacyFormualry(dataDriven.GetPharmacyFormularyName(), dataDriven.GetPharmacyFormularyID(), dataDriven.GetPFvendor(), dataDriven.GetFacilityName());
+            test.Log(Status.Info, validStrings.GetpharmacycreationStatus());
         }
 
 
@@ -168,21 +173,22 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
         [Test, Order(6)]
         [TestCaseSource(typeof(TestBase), "BrowserToRunWith")]
+        [Obsolete]
         public void BD_ValidateCreationOfNewAlignmentProject(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.getCreateProjectStart());
+            test = extent.CreateTest(validStrings.GetCreateProjectStart());
             BDHomePage home = new BDHomePage(driver);
             facility_1 = new Facility(driver);
             project_1 = new AlignmentProject(driver);
-            home.LaunchingBDWebsite(dataDriven.getUserName(), dataDriven.getUserPassword());
-            test.Log(Status.Info, validStrings.getLaunching());
-            facility_1.ImpersonateIDN(dataDriven.getIDNName());
-            test.Log(Status.Info,validStrings.getImpersonate());
+            home.LaunchingBDWebsite(dataDriven.GetUserName(), dataDriven.GetUserPassword());
+            test.Log(Status.Info, validStrings.GetLaunching());
+            facility_1.ImpersonateIDN(dataDriven.GetIDNName());
+            test.Log(Status.Info,validStrings.GetImpersonate());
             project_1.NavigateToAlignmentProject();
-            test.Log(Status.Info, validStrings.getAlignmentNavigation());
-            project_1.CreateNewAlignmentProject(dataDriven.getAlignmentProjectName(), dataDriven.getPharmacyFormularyName());
-            test.Log(Status.Info, validStrings.getAlignmentcreationStatus());
+            test.Log(Status.Info, validStrings.GetAlignmentNavigation());
+            project_1.CreateNewAlignmentProject(dataDriven.GetAlignmentProjectName(), dataDriven.GetPharmacyFormularyName());
+            test.Log(Status.Info, validStrings.GetAlignmentcreationStatus());
 
         }
     }

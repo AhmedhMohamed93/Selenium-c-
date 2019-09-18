@@ -19,7 +19,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
+        readonly String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
 
 
 
@@ -31,12 +31,12 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        By SigninBtn = By.XPath("//a[@id='anchorSignIn']");
-        By UserName = By.XPath("//input[@id='username']");
-        By UserPass = By.XPath("//input[@id='password']");
-        By LoginBtn = By.XPath("//button[@id='sign-in']");
-        By LaunchingValidation = By.XPath("//div[@class='item active']//img");
-        By loginNavigation = By.XPath("//a[@class='bdshell--user-info-widget--toggle px-3 bdshell--user-info-widget--username text-light dropdown-toggle text-truncate d-none d-lg-inline']");
+        readonly By SigninBtn = By.XPath("//a[@id='anchorSignIn']");
+        readonly By UserName = By.XPath("//input[@id='username']");
+        readonly By UserPass = By.XPath("//input[@id='password']");
+        readonly By LoginBtn = By.XPath("//button[@id='sign-in']");
+        readonly By LaunchingValidation = By.XPath("//div[@class='item active']//img");
+        readonly By loginNavigation = By.XPath("//a[@class='bdshell--user-info-widget--toggle px-3 bdshell--user-info-widget--username text-light dropdown-toggle text-truncate d-none d-lg-inline']");
 
 
 
@@ -127,6 +127,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
+        [Obsolete]
         public void ValidateLaunchingPageSucessfully()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
@@ -144,6 +145,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
+        [Obsolete]
         public void ValidateLoginPageNavigation()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(10));
