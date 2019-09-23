@@ -4,8 +4,10 @@ using AventStack.ExtentReports.Reporter.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -97,6 +99,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
+        [Obsolete]
         public void Setup(String browserName)
         {
 
@@ -107,17 +110,23 @@ namespace Selenium_with_CSharp
             if (browserName.Equals("Chrome"))
             {
                 driver = new ChromeDriver();
+                driver.Manage().Window.Maximize();
             }
             else if (browserName.Equals("Firefox"))
             {
                 driver = new FirefoxDriver();
+                driver.Manage().Window.Maximize();
             }
             else if (browserName.Equals("IE"))
             {
                 driver = new InternetExplorerDriver();
+                driver.Manage().Window.Maximize();
+            }
+            else
+            {
+                throw new Exception("There's no defined browser!!");
             }
 
-            driver.Manage().Window.Maximize();
 
             /****************************************************************************************************
              *                                   Handling Extent Report attributes                              *
