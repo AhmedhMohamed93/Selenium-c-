@@ -19,7 +19,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        readonly String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
+        
 
 
 

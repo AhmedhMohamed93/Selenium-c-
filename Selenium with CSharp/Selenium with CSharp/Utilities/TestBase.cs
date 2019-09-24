@@ -32,7 +32,7 @@ namespace Selenium_with_CSharp
         public static ExtentReports extent;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
-
+        readonly protected String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
 
         /* Initialization of Data Driven Object */
 
@@ -136,10 +136,12 @@ namespace Selenium_with_CSharp
             htmlReporter.Config.Theme = Theme.Dark;
             htmlReporter.Config.DocumentTitle = "Test Report";
 
-            
             htmlReporter.Config.ReportName = "Generate Alignment Project Test Report";
             GetInstance();
             extent.AttachReporter(htmlReporter);
+            extent.AddSystemInfo("Environment", "Stage A Server");
+            extent.AddSystemInfo("User Name", "Ahmed Hamdy");
+            
         }
 
         /****************************************************************************************************

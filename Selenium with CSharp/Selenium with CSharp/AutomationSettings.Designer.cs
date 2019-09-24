@@ -61,7 +61,7 @@ namespace Selenium_with_CSharp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Firefox.
+        ///   Looks up a localized string similar to Chrome.
         /// </summary>
         internal static string browsersToRunWith {
             get {
