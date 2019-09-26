@@ -32,23 +32,23 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        readonly By adminMenu = By.XPath("//a[contains(text(),'Admin')]");
-        readonly By healthSystemDropDown = By.XPath("//span[contains(text(),'Health Systems')]");
-        readonly By newHealthSystem = By.XPath("//button[@id='NewHealthSystemOrg']");
-        readonly By HealthSysName = By.XPath("//input[@id='HealthSystemOrgName']");
-        readonly By HealthSysID = By.XPath("//input[@id='HealthSystemOrgID']");
-        readonly By AnchorProduct = By.XPath("//label[contains(text(),'Alaris')]");
-        readonly By saveBtn = By.XPath("//button[@id='SaveHealthSystemOrg']");
-        readonly By idnComplete = By.XPath("//body[@class='modal-open']/app/div[@id='main-wrapper']/ng-component[@class='ng-star-inserted']/modal/div[@class='modal fade in show']/div[@class='modal-dialog modal-lg']/div[@class='modal-content']/div[@class='modal-body']/form[@id='FormHealthSystemOrg']/div[@class='row']/div[2]");
-        readonly By ActAs = By.XPath("//input[@id='ActingAsDropdown']");
-        readonly By IdnValidation = By.XPath("(//div[@class='bd-title']/span)[1]");
-        readonly By facility = By.XPath("//span[contains(text(),'Regions and Facilities')]");
-        readonly By newFacility = By.XPath("//button[@id='NewRegionFacility']");
-        readonly By facilityName = By.XPath("//input[@id='FacilityName']");
-        readonly By facilityID = By.XPath("//input[@id='FacilityUniqueId']");
-        readonly By SaveFacility = By.XPath("//button[@id='SaveFacilityRegion']");
-        readonly By facilitySearch = By.XPath("//input[@id='SearchRegionFacility']");
-        readonly By FacilityValidation = By.XPath("//td[2]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        private readonly By adminMenu = By.XPath("//a[contains(text(),'Admin')]");
+        private readonly By healthSystemDropDown = By.XPath("//span[contains(text(),'Health Systems')]");
+        private readonly By newHealthSystem = By.XPath("//button[@id='NewHealthSystemOrg']");
+        private readonly By HealthSysName = By.XPath("//input[@id='HealthSystemOrgName']");
+        private readonly By HealthSysID = By.XPath("//input[@id='HealthSystemOrgID']");
+        private readonly By AnchorProduct = By.XPath("//label[contains(text(),'Alaris')]");
+        private readonly By saveBtn = By.XPath("//button[@id='SaveHealthSystemOrg']");
+        private readonly By idnComplete = By.XPath("//body[@class='modal-open']/app/div[@id='main-wrapper']/ng-component[@class='ng-star-inserted']/modal/div[@class='modal fade in show']/div[@class='modal-dialog modal-lg']/div[@class='modal-content']/div[@class='modal-body']/form[@id='FormHealthSystemOrg']/div[@class='row']/div[2]");
+        private readonly By ActAs = By.XPath("//input[@id='ActingAsDropdown']");
+        private readonly By IdnValidation = By.XPath("(//div[@class='bd-title']/span)[1]");
+        private readonly By facility = By.XPath("//span[contains(text(),'Regions and Facilities')]");
+        private readonly By newFacility = By.XPath("//button[@id='NewRegionFacility']");
+        private readonly By facilityName = By.XPath("//input[@id='FacilityName']");
+        private readonly By facilityID = By.XPath("//input[@id='FacilityUniqueId']");
+        private readonly By SaveFacility = By.XPath("//button[@id='SaveFacilityRegion']");
+        private readonly By facilitySearch = By.XPath("//input[@id='SearchRegionFacility']");
+        private readonly By FacilityValidation = By.XPath("//td[2]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
 
 
         /****************************************************************************************************

@@ -35,21 +35,20 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        readonly By Infusion = By.XPath("//a[contains(text(),'Infusion')]");
-        readonly By alignmentProject = By.XPath("//span[contains(text(),'Alignment Projects')]");
-        readonly By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
-        readonly By AlignmentProjectName = By.XPath("//input[@id='Name']");
-        readonly By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
-        readonly By Facility = By.XPath("//div[@class= 'checkbox']/label");
-        readonly By UploadGRE = By.XPath("//label[@class='btn btn-default']");
-        readonly By EMRItems = By.XPath("//div[@class='col-md-4 IvLabel']//input[1]");
-        readonly By EMRItemsSelect = By.XPath("//a[@id='listItemIVTypesList2']");
-        readonly By UploadEMR = By.XPath("//file-uploader[@id='IvFiles Uploader']//label[@class='btn btn-default'][contains(text(),'Browse')]");
-        readonly By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
-        readonly By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
-        readonly By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
-        readonly By UploadSucessfully = By.XPath("//span[contains(text(),'File Uploaded.')]");
-        //By selectPF = By.XPath("//a[@id='listItemEMRFormularyList1']");
+        private readonly By Infusion = By.XPath("//a[contains(text(),'Infusion')]");
+        private readonly By alignmentProject = By.XPath("//span[contains(text(),'Alignment Projects')]");
+        private readonly By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
+        private readonly By AlignmentProjectName = By.XPath("//input[@id='Name']");
+        private readonly By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
+        private readonly By Facility = By.XPath("//div[@class= 'checkbox']/label");
+        private readonly By UploadGRE = By.XPath("//label[@class='btn btn-default']");
+        private readonly By EMRItems = By.XPath("//div[@class='col-md-4 IvLabel']//input[1]");
+        private readonly By EMRItemsSelect = By.XPath("//a[@id='listItemIVTypesList2']");
+        private readonly By UploadEMR = By.XPath("//file-uploader[@id='IvFiles Uploader']//label[@class='btn btn-default'][contains(text(),'Browse')]");
+        private readonly By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
+        private readonly By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
+        private readonly By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        private readonly By UploadSucessfully = By.XPath("//span[contains(text(),'File Uploaded.')]");
 
 
 

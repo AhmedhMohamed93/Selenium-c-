@@ -31,17 +31,17 @@ namespace Selenium_with_CSharp
          *                                           Locators                                               *
          *                                                                                                  *
          ****************************************************************************************************/
-        readonly By Formularies = By.XPath("//a[contains(text(),'Formularies')]");
-        readonly By PharmacyFormualry = By.XPath("//span[contains(text(),'Pharmacy Formularies')]");
-        readonly By NewPF = By.XPath("//button[@id='AddPharmacy']");
-        readonly By PhFName = By.XPath("//input[@id='Name']");
-        readonly By PhFID = By.XPath("//input[@id='ID']");
-        readonly By Vendor = By.XPath("//div[@class='ng-star-inserted']//input[1]");
-        readonly By associatedFacility = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//input[1]");
-        readonly By associatedFacilityAdd = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//button[@id='bdassociationcontrol1-add']");
-        readonly By SavePF = By.XPath("//button[@id='SaveDetailPharmacyFormulary']");
-        readonly By PharmacySearch = By.XPath("//input[@id='SearchItem']");
-        readonly By PharmacyValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        private readonly By Formularies = By.XPath("//a[contains(text(),'Formularies')]");
+        private readonly By PharmacyFormualry = By.XPath("//span[contains(text(),'Pharmacy Formularies')]");
+        private readonly By NewPF = By.XPath("//button[@id='AddPharmacy']");
+        private readonly By PhFName = By.XPath("//input[@id='Name']");
+        private readonly By PhFID = By.XPath("//input[@id='ID']");
+        private readonly By Vendor = By.XPath("//div[@class='ng-star-inserted']//input[1]");
+        private readonly By associatedFacility = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//input[1]");
+        private readonly By associatedFacilityAdd = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//button[@id='bdassociationcontrol1-add']");
+        private readonly By SavePF = By.XPath("//button[@id='SaveDetailPharmacyFormulary']");
+        private readonly By PharmacySearch = By.XPath("//input[@id='SearchItem']");
+        private readonly By PharmacyValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
 
         /****************************************************************************************************
          *                                                                                                  *

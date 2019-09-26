@@ -31,12 +31,12 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        readonly By SigninBtn = By.XPath("//a[@id='anchorSignIn']");
-        readonly By UserName = By.XPath("//input[@id='username']");
-        readonly By UserPass = By.XPath("//input[@id='password']");
-        readonly By LoginBtn = By.XPath("//button[@id='sign-in']");
-        readonly By LaunchingValidation = By.XPath("//div[@class='item active']//img");
-        readonly By loginNavigation = By.XPath("//a[@class='bdshell--user-info-widget--toggle px-3 bdshell--user-info-widget--username text-light dropdown-toggle text-truncate d-none d-lg-inline']");
+        private readonly By SigninBtn = By.XPath("//a[@id='anchorSignIn']");
+        private readonly By UserName = By.XPath("//input[@id='username']");
+        private readonly By UserPass = By.XPath("//input[@id='password']");
+        private readonly By LoginBtn = By.XPath("//button[@id='sign-in']");
+        private readonly By LaunchingValidation = By.XPath("//div[@class='item active']//img");
+        private readonly By loginNavigation = By.XPath("//a[@class='bdshell--user-info-widget--toggle px-3 bdshell--user-info-widget--username text-light dropdown-toggle text-truncate d-none d-lg-inline']");
 
 
 

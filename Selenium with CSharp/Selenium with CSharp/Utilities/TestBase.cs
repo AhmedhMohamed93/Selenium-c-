@@ -29,9 +29,9 @@ namespace Selenium_with_CSharp
         protected IWebDriver driver;
 
         /*Extent Report Variables*/
-        public static ExtentReports extent;
-        public static ExtentHtmlReporter htmlReporter;
-        public static ExtentTest test;
+        protected static ExtentReports extent;
+        protected static ExtentHtmlReporter htmlReporter;
+        protected static ExtentTest test;
         readonly protected String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
 
         /* Initialization of Data Driven Object */
@@ -44,7 +44,7 @@ namespace Selenium_with_CSharp
          *                                                                                                  *
          ****************************************************************************************************/
 
-        readonly By WaitCondition = By.CssSelector("ajax-loader > div.loadingplaceholder");
+        readonly private By WaitCondition = By.CssSelector("ajax-loader > div.loadingplaceholder");
 
 
         /****************************************************************************************************
@@ -133,14 +133,13 @@ namespace Selenium_with_CSharp
              ****************************************************************************************************/
 
             htmlReporter = new ExtentHtmlReporter(@"C:\Users\ahmed.mohamed\Documents\GitHub\Selenium-c-\Selenium with CSharp\TestResults\report.html");
-            htmlReporter.Config.Theme = Theme.Dark;
+            htmlReporter.Config.Theme = Theme.Standard;
             htmlReporter.Config.DocumentTitle = "Test Report";
 
             htmlReporter.Config.ReportName = "Generate Alignment Project Test Report";
             GetInstance();
             extent.AttachReporter(htmlReporter);
-            extent.AddSystemInfo("Environment", "Stage A Server");
-            extent.AddSystemInfo("User Name", "Ahmed Hamdy");
+
             
         }
 
