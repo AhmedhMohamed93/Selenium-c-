@@ -143,6 +143,7 @@ namespace Selenium_with_CSharp
             
         }
 
+
         /****************************************************************************************************
          *                                                                                                  *
          *   Method Name : waituntillfinshUpload()                                                          *
@@ -186,7 +187,7 @@ namespace Selenium_with_CSharp
      *   Description : This Method is to Generate Extent Report for each test                           *
      *                                                                                                  *
      ****************************************************************************************************/
-
+/*
     [TearDown]
         public void End()
         {
@@ -204,7 +205,7 @@ namespace Selenium_with_CSharp
             extent.Flush();
         }
 
-
+*/
         /****************************************************************************************************
          *                                                                                                  *
          *   Method Name : EndTest()                                                                        *
@@ -213,10 +214,12 @@ namespace Selenium_with_CSharp
          *   Description : This Method is to close the Web Driver                                           *
          *                                                                                                  *
          ****************************************************************************************************/
+         /*
         [OneTimeTearDown]
         public void EndTest()
         {
             driver.Quit();
         }
+        */
     }
 }

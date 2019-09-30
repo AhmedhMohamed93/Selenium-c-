@@ -100,6 +100,10 @@
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.7.0\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -130,6 +134,7 @@
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
@@ -152,6 +157,7 @@
     <Compile Include="Test\ValidateCreateNewfacility.cs" />
     <Compile Include="Test\ValidateCreateNewIDN.cs" />
     <Compile Include="Test\ValidateCreateNewPF.cs" />
+    <Compile Include="Test\ValidateCreationOfAlignmentProjectDB.cs" />
     <Compile Include="Test\ValidateLoginAndLaunch.cs" />
     <Compile Include="Utilities\TestBase.cs" />
     <Compile Include="DataDriven\TestData.cs" />

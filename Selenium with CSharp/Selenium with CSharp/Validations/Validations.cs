@@ -69,145 +69,179 @@ namespace Selenium_with_CSharp
                 private readonly String AlignmentcreationStatus = "New Alignment Project is created successfully";
 
 
+                /*************************************************************************************
+                 *            BD_ValidateCreationOfNewAlignmentProjectDB() Test Log Strings          *
+                 *************************************************************************************/
+
+                private readonly String DBConnect = "Initiate the Connection to SQL Server";
+                private readonly String connecting = "Connecting to SQL Server ... ";
+                private readonly String connectComplete = "Done.";
+                private readonly String ReadData = "Reading data from table";
+
         /****************************************************************************************************
 		 *                                                                                                  *
 		 *                                           Methods                                                *
 		 *                                                                                                  *
 		 ****************************************************************************************************/
 
-                /******************************************************************************************
-                 *                BD_ValidateLaunchWebsite() Test Logs getters                            *
-                 ******************************************************************************************/
+        /******************************************************************************************
+         *                BD_ValidateLaunchWebsite() Test Logs getters                            *
+         ******************************************************************************************/
 
-                public String GetlaunchStart()
-                {
-                    return launchStart;
-                }
+        public String GetlaunchStart()
+                    {
+                        return launchStart;
+                    }
 
-                public String GetnavigationString()
-                {
-                    return Navigation;
-                }
+                    public String GetnavigationString()
+                    {
+                        return Navigation;
+                    }
 
-                public String GetlaunchStatus()
-                {
-                    return LaunchStatus;
-                }
+                    public String GetlaunchStatus()
+                    {
+                        return LaunchStatus;
+                    }
 
-
-
-                /******************************************************************************************
-                 *                BD_LoginSuccessfully() Test Logs getters                                *
-                 ******************************************************************************************/
-
-                public String GetloginStart()
-                {
-                    return loginStart;
-                }
-
-                public String Getlogging()
-                {
-                    return Logging;
-                }
-
-                public String GetloginStatus()
-                {
-                    return loginstatus;
-                }
 
 
                 /******************************************************************************************
                  *                BD_LoginSuccessfully() Test Logs getters                                *
                  ******************************************************************************************/
 
-                public String GetCreateIDNStart()
-                {
-                    return CreateIDNStart;
-                }
+                    public String GetloginStart()
+                    {
+                        return loginStart;
+                    }
 
-                public String GetLaunching()
-                {
-                    return Launching;
-                }
+                    public String Getlogging()
+                    {
+                        return Logging;
+                    }
 
-                public String GetIDNNavigation()
-                {
-                    return IDNNavigation;
-                }
+                    public String GetloginStatus()
+                    {
+                        return loginstatus;
+                    }
 
-                public String GetsuccessfulCreationOfIDN()
-                {
-                    return successfulCreationOfIDN;
-                }
 
-                public String GetCreationStatus()
-                {
-                    return CreationStatus;
-                }
+                /******************************************************************************************
+                 *                BD_LoginSuccessfully() Test Logs getters                                *
+                 ******************************************************************************************/
+
+                    public String GetCreateIDNStart()
+                    {
+                        return CreateIDNStart;
+                    }
+
+                    public String GetLaunching()
+                    {
+                        return Launching;
+                    }
+
+                    public String GetIDNNavigation()
+                    {
+                        return IDNNavigation;
+                    }
+
+                    public String GetsuccessfulCreationOfIDN()
+                    {
+                        return successfulCreationOfIDN;
+                    }
+
+                    public String GetCreationStatus()
+                    {
+                        return CreationStatus;
+                    }
 
 
                 /******************************************************************************************
                  *                    BD_ValidateCreationOfNewFacility() Test Logs getters                *
                  ******************************************************************************************/
 
-                public String GetCreateFacilityStart()
-                {
-                    return CreateFacilityStart;
-                }
+                    public String GetCreateFacilityStart()
+                    {
+                        return CreateFacilityStart;
+                    }
 
-                public String GetImpersonate()
-                {
-                    return Impersonate;
-                }
+                    public String GetImpersonate()
+                    {
+                        return Impersonate;
+                    }
 
-                public String GetfacilityNavigation()
-                {
-                    return facilityNavigation;
-                }
+                    public String GetfacilityNavigation()
+                    {
+                        return facilityNavigation;
+                    }
 
-                public String GetfacilitycreationStatus()
-                {
-                    return facilitycreationStatus;
-                }
+                    public String GetfacilitycreationStatus()
+                    {
+                        return facilitycreationStatus;
+                    }
 
 
                 /******************************************************************************************
                  *                 BD_ValidateCreationOfNewPharmacyFormualry() Test Logs getters          *
                  ******************************************************************************************/
 
-                public String GetCreatePharmacyStart()
-                {
-                    return CreatePharmacyStart;
-                }
+                    public String GetCreatePharmacyStart()
+                    {
+                        return CreatePharmacyStart;
+                    }
 
-                public String GetpharmacycreationStatus()
-                {
-                    return pharmacycreationStatus;
-                }
+                    public String GetpharmacycreationStatus()
+                    {
+                        return pharmacycreationStatus;
+                    }
 
-                public String GetpharmacyNavigation()
-                {
-                    return pharmacyNavigation;
-                }
+                    public String GetpharmacyNavigation()
+                    {
+                        return pharmacyNavigation;
+                    }
 
 
                 /******************************************************************************************
                  *                 BD_ValidateCreationOfNewAlignmentProject() Test Logs getters           *
                  ******************************************************************************************/
 
-                public String GetCreateProjectStart()
-                {
-                    return CreateProjectStart;
-                }
+                    public String GetCreateProjectStart()
+                    {
+                        return CreateProjectStart;
+                    }
 
-                public String GetAlignmentcreationStatus()
-                {
-                    return AlignmentcreationStatus;
-                }
+                    public String GetAlignmentcreationStatus()
+                    {
+                        return AlignmentcreationStatus;
+                    }
 
-                public String GetAlignmentNavigation()
-                {
-                    return AlignmentNavigation;
-                }       
+                    public String GetAlignmentNavigation()
+                    {
+                        return AlignmentNavigation;
+                    }
+
+                /******************************************************************************************
+                 *               BD_ValidateCreationOfNewAlignmentProjectDB() Test Logs getters           *
+                 ******************************************************************************************/
+
+                    public String GetconnectDB()
+                    {
+                        return DBConnect;
+                    }
+
+                    public String Getconnecting()
+                    {
+                        return connecting;
+                    }
+
+                    public String GetConnectDone()
+                    {
+                        return connectComplete;
+                    }
+
+                    public String GetReadData()
+                    {
+                        return ReadData;
+                    }
+
     }
 }

@@ -40,6 +40,7 @@ namespace Selenium_with_CSharp
         private readonly By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
         private readonly By AlignmentProjectName = By.XPath("//input[@id='Name']");
         private readonly By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
+        private readonly By EMRSelector = By.XPath("//a[@id = 'listItemEMRFormularyList1']");
         private readonly By Facility = By.XPath("//div[@class= 'checkbox']/label");
         private readonly By UploadGRE = By.XPath("//label[@class='btn btn-default']");
         private readonly By EMRItems = By.XPath("//div[@class='col-md-4 IvLabel']//input[1]");
@@ -108,8 +109,10 @@ namespace Selenium_with_CSharp
             WaitUntilPageLoad();
             driver.FindElement(NewalignmentProjectBtn).Click();
             driver.FindElement(AlignmentProjectName).SendKeys(AlignmentprojectName);
-            driver.FindElement(EMRFormualry).Click();
+            //driver.FindElement(EMRFormualry).Click();
+            //Thread.Sleep(1500);
             driver.FindElement(EMRFormualry).SendKeys(EMRformualry);
+            driver.FindElement(EMRSelector).Click();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             wait.Until(ExpectedConditions.ElementToBeClickable(Facility));
             driver.FindElement(Facility).Click();
