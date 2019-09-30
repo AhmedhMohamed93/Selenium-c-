@@ -46,8 +46,6 @@ namespace Selenium_with_CSharp.Test
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    // while there is another record present
-
                     while (reader.Read())
                     {
                         String data = String.Format("{0},{1}", reader[0], reader[1]);
