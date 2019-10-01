@@ -58,10 +58,7 @@ namespace Selenium_with_CSharp.Test
             {
                 Console.WriteLine(e.StackTrace);
             }
-            finally
-            {
 
-            }
         }
     }
 }
