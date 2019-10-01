@@ -50,7 +50,7 @@ namespace Selenium_with_CSharp.Test
                     {
                         String data = String.Format("{0},{1}", reader[0], reader[1]);
                         int position = data.IndexOf(",");
-                        Assert.AreEqual("Project3333", data.Substring(position + 1));
+                        Assert.AreEqual("Project222", data.Substring(position + 1));
                         Console.WriteLine(data.Substring(position + 1));
                     }
                 }

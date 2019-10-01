@@ -56,7 +56,7 @@ namespace Selenium_with_CSharp.Test
         [Obsolete]
         public void BD_LoginSuccessfully(String browserName)
         {
-            //Setup(browserName);
+            Setup(browserName);
             test = extent.CreateTest(validStrings.GetloginStart());
             homePage = new BDHomePage(driver);
             homePage.Navigate();
