@@ -69,10 +69,11 @@ namespace Selenium_with_CSharp
                 private readonly String AlignmentcreationStatus = "New Alignment Project is created successfully";
 
 
-                /*************************************************************************************
-                 *            BD_ValidateCreationOfNewAlignmentProjectDB() Test Log Strings          *
-                 *************************************************************************************/
+               /*************************************************************************************
+                *            BD_ValidateCreationOfNewAlignmentProjectDB() Test Log Strings          *
+                *************************************************************************************/
 
+                private readonly String DBvalidationStart = "Validation of Existance of the Created Alignment Project in the DB";
                 private readonly String DBConnect = "Initiate the Connection to SQL Server";
                 private readonly String connecting = "Connecting to SQL Server ... ";
                 private readonly String connectComplete = "Done.";
@@ -219,9 +220,13 @@ namespace Selenium_with_CSharp
                         return AlignmentNavigation;
                     }
 
-                /******************************************************************************************
-                 *               BD_ValidateCreationOfNewAlignmentProjectDB() Test Logs getters           *
-                 ******************************************************************************************/
+        /******************************************************************************************
+         *               BD_ValidateCreationOfNewAlignmentProjectDB() Test Logs getters           *
+         ******************************************************************************************/
+                    public String GetStartDBValidation()
+                    {
+                        return DBvalidationStart ;
+                    }
 
                     public String GetconnectDB()
                     {

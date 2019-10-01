@@ -32,8 +32,8 @@ namespace Selenium_with_CSharp.Test
         public void BD_ValidateCreationOfNewAlignmentProjectDB(String browserName)
         {
             Setup(browserName);
-            test = extent.CreateTest(validStrings.GetconnectDB());
-            String con = "Data Source=SD-KP-TSASUP01.CFNP.LOCAL\\KP;Initial Catalog=CommonFormulary;User ID=CommonFormularyAppUser;Password=CommonFormularyAppUser";
+            test = extent.CreateTest(validStrings.GetStartDBValidation());
+            test.Log(Status.Info, validStrings.GetconnectDB());
             try
             {
                 SqlConnection connection = new SqlConnection(con);
@@ -50,13 +50,17 @@ namespace Selenium_with_CSharp.Test
                     {
                         String data = String.Format("{0},{1}", reader[0], reader[1]);
                         int position = data.IndexOf(",");
-                        Assert.AreEqual("Epic101_AP002", data.Substring(position + 1));
+                        Assert.AreEqual("Project3333", data.Substring(position + 1));
                         Console.WriteLine(data.Substring(position + 1));
                     }
                 }
             }catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+
             }
         }
     }

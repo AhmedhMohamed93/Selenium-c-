@@ -33,6 +33,7 @@ namespace Selenium_with_CSharp
         protected static ExtentHtmlReporter htmlReporter;
         protected static ExtentTest test;
         readonly protected String URL = "https://las-stage-a-2012.kp.cfnp.local/DataManager/#/Home";
+        protected readonly String con = "Data Source=SD-KP-TSASUP01.CFNP.LOCAL\\KP;Initial Catalog=CommonFormulary;User ID=CommonFormularyAppUser;Password=CommonFormularyAppUser";
 
         /* Initialization of Data Driven Object */
 
