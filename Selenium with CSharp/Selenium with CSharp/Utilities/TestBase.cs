@@ -73,6 +73,11 @@ namespace Selenium_with_CSharp
 
         }
 
+        public void Capture(String screenshotName)
+        {
+            WaitUntilPageLoad();
+            ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("C:\\Users\\Ahmed.Mohamed\\Documents\\GitHub\\Selenium-c-\\Selenium with CSharp\\Selenium with CSharp\\Screenshots\\"+screenshotName+".png", ScreenshotImageFormat.Png);
+        }
 
         /****************************************************************************************************
          *                                                                                                  *

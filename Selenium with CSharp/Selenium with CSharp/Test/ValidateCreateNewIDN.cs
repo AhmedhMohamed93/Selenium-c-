@@ -43,6 +43,8 @@ namespace Selenium_with_CSharp.Test
             test.Log(Status.Info, validStrings.GetsuccessfulCreationOfIDN());
             facility_1.ImpersonateIDN(dataDriven.GetIDNName());
             test.Log(Status.Info, validStrings.GetCreationStatus());
+            Capture(validStrings.GetIDNscreenshotName());
+            test.Log(Status.Info, validStrings.GetconfirmScreenshot());
         }
 
     }

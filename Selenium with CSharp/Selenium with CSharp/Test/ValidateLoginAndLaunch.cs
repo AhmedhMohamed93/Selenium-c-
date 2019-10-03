@@ -41,6 +41,8 @@ namespace Selenium_with_CSharp.Test
             test.Log(Status.Info, validStrings.GetnavigationString());
             homePage.ValidateLaunchingPageSucessfully();
             test.Log(Status.Info, validStrings.GetlaunchStatus());
+            Capture(validStrings.GetLaunchscreenshotName());
+            test.Log(Status.Info, validStrings.GetconfirmScreenshot());
         }
 
         /****************************************************************************************************
@@ -65,7 +67,8 @@ namespace Selenium_with_CSharp.Test
             test.Log(Status.Info, validStrings.Getlogging());
             homePage.ValidateLoginPageNavigation();
             test.Log(Status.Info, validStrings.GetloginStatus());
-
+            Capture(validStrings.GetLoginscreenshotName());
+            test.Log(Status.Info, validStrings.GetconfirmScreenshot());
         }
 
     }

@@ -43,6 +43,8 @@ namespace Selenium_with_CSharp.Test
             test.Log(Status.Info, validStrings.GetfacilityNavigation());
             facility_1.CreateNewFacility(dataDriven.GetFacilityName(), dataDriven.GetFacilityID());
             test.Log(Status.Info, validStrings.GetfacilitycreationStatus());
+            Capture(validStrings.GetFacilityscreenshotName());
+            test.Log(Status.Info, validStrings.GetconfirmScreenshot());
         }
     }
 }

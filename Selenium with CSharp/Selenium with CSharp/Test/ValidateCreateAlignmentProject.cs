@@ -46,7 +46,8 @@ namespace Selenium_with_CSharp.Test
             test.Log(Status.Info, validStrings.GetAlignmentNavigation());
             project_1.CreateNewAlignmentProject(dataDriven.GetAlignmentProjectName(), dataDriven.GetPharmacyFormularyName());
             test.Log(Status.Info, validStrings.GetAlignmentcreationStatus());
-
+            Capture(validStrings.GetAlignmentscreenshotName());
+            test.Log(Status.Info, validStrings.GetconfirmScreenshot());
         }
     }
 }

@@ -47,6 +47,8 @@ namespace Selenium_with_CSharp.Test
             test.Log(Status.Info, validStrings.GetpharmacyNavigation());
             pharm_1.CreateNewPharmacyFormualry(dataDriven.GetPharmacyFormularyName(), dataDriven.GetPharmacyFormularyID(), dataDriven.GetPFvendor(), dataDriven.GetFacilityName());
             test.Log(Status.Info, validStrings.GetpharmacycreationStatus());
+            Capture(validStrings.GetPFscreenshotName());
+            test.Log(Status.Info, validStrings.GetconfirmScreenshot());
         }
     }
 }
