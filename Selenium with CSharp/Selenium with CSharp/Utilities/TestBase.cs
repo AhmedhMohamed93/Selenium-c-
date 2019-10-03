@@ -73,6 +73,15 @@ namespace Selenium_with_CSharp
 
         }
 
+        /****************************************************************************************************
+         *                                                                                                  *
+         *   Method Name : Capture()                                                                        *
+         *   Inputs      : String screenshotName                                                            *
+         *   Outputs     : void                                                                             *
+         *   Description : This Method is to capture Screenshots at the end of each test                    *
+         *                                                                                                  *
+         ****************************************************************************************************/
+
         public void Capture(String screenshotName)
         {
             WaitUntilPageLoad();
