@@ -47,8 +47,8 @@ namespace Selenium_with_CSharp
         private readonly By facilityName = By.XPath("//input[@id='FacilityName']");
         private readonly By facilityID = By.XPath("//input[@id='FacilityUniqueId']");
         private readonly By SaveFacility = By.XPath("//button[@id='SaveFacilityRegion']");
-        private readonly By facilitySearch = By.XPath("//input[@id='SearchRegionFacility']");
-        private readonly By FacilityValidation = By.XPath("//td[2]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        private readonly By facilitySearch = By.XPath("//input[@id='search']");
+        private readonly By FacilityValidation = By.XPath("//td[2]//div[1]//span[1]");
 
 
         /****************************************************************************************************

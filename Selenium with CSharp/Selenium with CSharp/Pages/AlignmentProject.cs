@@ -36,19 +36,19 @@ namespace Selenium_with_CSharp
          ****************************************************************************************************/
 
         private readonly By Infusion = By.XPath("//a[contains(text(),'Infusion')]");
-        private readonly By alignmentProject = By.XPath("//span[contains(text(),'Alignment Projects')]");
-        private readonly By NewalignmentProjectBtn = By.XPath("/html[1]/body[1]/app[1]/div[1]/ng-component[1]/div[1]/div[2]/tabset[1]/div[1]/ng-component[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]");
+        private readonly By alignmentProject = By.XPath("//span[contains(text(),'Interoperability Projects')]");
+        private readonly By NewalignmentProjectBtn = By.XPath("//button[@id='AddAlignmentProject']");
         private readonly By AlignmentProjectName = By.XPath("//input[@id='Name']");
-        private readonly By EMRFormualry = By.XPath("//div[@class='col-md-5']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
+        private readonly By EMRFormualry = By.XPath("//div[@class='col-md-12 form-group']//bddropdown[@name='autoCompleteControls[0].Name']//input[1]");
         private readonly By EMRSelector = By.XPath("//a[@id = 'listItemEMRFormularyList1']");
         private readonly By Facility = By.XPath("//div[@class= 'checkbox']/label");
-        private readonly By UploadGRE = By.XPath("//label[@class='btn btn-default']");
-        private readonly By EMRItems = By.XPath("//div[@class='col-md-4 IvLabel']//input[1]");
+        private readonly By UploadGRE = By.XPath("//label[@class='btn bd-btn btn-default no-margin-bottom']");
+        private readonly By EMRItems = By.XPath("//div[@class='col-md-8 IvLabel pull-left']//input[1]");
         private readonly By EMRItemsSelect = By.XPath("//a[@id='listItemIVTypesList2']");
-        private readonly By UploadEMR = By.XPath("//file-uploader[@id='IvFiles Uploader']//label[@class='btn btn-default'][contains(text(),'Browse')]");
+        private readonly By UploadEMR = By.XPath("//file-uploader[@id='IvFilesUploader']//label[@class='btn bd-btn btn-default no-margin-bottom'][contains(text(),'Browse')]");
         private readonly By SaveAlignmentProject = By.XPath("//div[@class='col-sm-12 tab-container-header']//span[1]");
-        private readonly By AlignmentSearch = By.XPath("//input[@id='SearchItem']");
-        private readonly By AlignmentProjectValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        private readonly By AlignmentSearch = By.XPath("//input[@id='search']");
+        private readonly By AlignmentProjectValidation = By.XPath("//td[1]//div[1]");
         private readonly By UploadSucessfully = By.XPath("//span[contains(text(),'File Uploaded.')]");
 
 
@@ -94,9 +94,9 @@ namespace Selenium_with_CSharp
 
         /****************************************************************************************************
          *                                                                                                  *
-         *   Method Name : CreateNewPharmacyAlignmentProject()                                              *
+         *   Method Name : CreateNewAlignmentProject()                                              *
          *   Inputs      : String Alignment Project Name                                                    *
-         *               : String Pharmacy Foprmualry Name                                                  *
+         *               : String Pharmacy Formualry Name                                                  *
          *   Outputs     : Void                                                                             *
          *   Description : This Method is to Fill all required fields in order to create Alignment Project  *
          *               : and upload GRE file and EMR Items                                                *

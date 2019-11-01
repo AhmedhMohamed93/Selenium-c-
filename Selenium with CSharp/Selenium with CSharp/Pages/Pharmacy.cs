@@ -40,8 +40,8 @@ namespace Selenium_with_CSharp
         private readonly By associatedFacility = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//input[1]");
         private readonly By associatedFacilityAdd = By.XPath("//div[@class='pharmacy-formulary-form-association-control double-margin-top double-padding-top']//button[@id='bdassociationcontrol1-add']");
         private readonly By SavePF = By.XPath("//button[@id='SaveDetailPharmacyFormulary']");
-        private readonly By PharmacySearch = By.XPath("//input[@id='SearchItem']");
-        private readonly By PharmacyValidation = By.XPath("//td[1]//ng2-smart-table-cell[1]//table-cell-view-mode[1]//div[1]//div[1]");
+        private readonly By PharmacySearch = By.XPath("//input[@id='search']");
+        private readonly By PharmacyValidation = By.XPath("//td[1]//div[1]");
 
         /****************************************************************************************************
          *                                                                                                  *
